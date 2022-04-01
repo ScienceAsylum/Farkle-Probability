@@ -52,6 +52,13 @@ A trick I spotted is to match long scoring dice first: The program can first loo
 
 There are small optimizations here and there, and they would be explained in the code.
 
+A python trick here is to use another standard library `collections`. It provides a `Counter` class that counts the number of elements in any iterable `arr` for you. It is dictionary-like, so once created, one can access the number of occurences of some element `x` simply with the following code.
+```python
+from collections import Counter
+counter = Counter(some_iterable)
+occurences_x = counter[x]
+```
+
 ### Print results / Count Farkles
 
 The original code did not need to have to count Farkles separately. Instead, in the main loop where the scoring rolls are counted, if a roll reaches the bottom of the if-else-if chain, it is a Farkle.
