@@ -52,11 +52,15 @@ A trick I spotted is to match long scoring dice first: The program can first loo
 
 There are small optimizations here and there, and they would be explained in the code.
 
-A python trick here is to use another standard library `collections`. It provides a `Counter` class that counts the number of elements in any iterable `arr` for you. It is dictionary-like, so once created, one can access the number of occurences of some element `x` simply with the following code.
+A python trick here is to use another standard library `collections`. It provides a `Counter` class that counts the number of elements in any iterable for you. It is dictionary-like, so once created, one can access the number of occurences of some element `x`. The good thing about this is that this allows easy access to features like getting the most common elements, as well as updating the counters easily.
 ```python
 from collections import Counter
 counter = Counter(some_iterable)
 occurences_x = counter[x]
+# Get the 3 most common elements
+three_most_common = counter.most_common(3)
+# delete x from the counter
+del counter[x]
 ```
 
 ### Print results / Count Farkles
