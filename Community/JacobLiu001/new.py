@@ -25,7 +25,7 @@ print(f"{NUM_DICES} {NUMBER_TO_TEXT[NUM_SIDES]}-SIDED Dice")
 # -------------- Generate each scoring pattern ----------------
 # Generate each pattern in decreasing order of pattern length
 
-all_patterns = [list() for _ in range(NUM_DICES+1)]
+all_patterns = [list() for _ in range(6+1)]
 # all_patterns[i] is the list of pattern matchers of length i
 
 # Each element in all_patterns[i] is a function.
